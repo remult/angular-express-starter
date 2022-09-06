@@ -4,8 +4,8 @@
   "scripts": {
     "ng": "ng",
     "dev": "concurrently -k -n \"API,WEB\" -c \"bgBlue.bold,bgGreen.bold\" \"ts-node-dev -P tsconfig.server.json src/server/\" \"ng serve --proxy-config proxy.conf.json --open\"",
-    "start": "ng serve",
-    "build": "ng build",
+    "start": "node dist/server/",
+    "build": "ng build && tsc -p tsconfig.server.json",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
