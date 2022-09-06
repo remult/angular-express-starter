@@ -1,0 +1,24 @@
+<input
+    type="checkbox"
+    [(ngModel)]="hideCompleted"
+    (change)="fetchTasks()"
+>
+Hide Completed
+<main>
+    <div *ngFor="let task of tasks">
+        <input
+            type="checkbox"
+            [(ngModel)]="task.completed"
+        >
+        <input [(ngModel)]="task.title">
+        <button (click)="saveTask(task)">Save</button>
+        <button (click)="deleteTask(task)">Delete</button>
+        <span>{{task.error?.modelState?.title}}</span>
+
+    </div>
+</main>
+<button (click)="addTask()">Add Task</button>
+<div>
+    <button (click)="setAll(true)">Set all as completed</button>
+    <button (click)="setAll(false)">Set all as uncompleted</button>
+</div>
