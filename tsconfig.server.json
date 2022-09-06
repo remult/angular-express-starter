@@ -4,7 +4,8 @@
        "module": "commonjs",
        "emitDecoratorMetadata": true,
        "noEmit": false,
-       "outDir": "dist"
+       "outDir": "dist",
+       "rootDir": "src"
     },
     "include": [
        "src/server/index.ts"
